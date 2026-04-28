@@ -1,6 +1,6 @@
 # Global owners
-JPlipio77
+@JPlipio77
 
 # Infra and CI/CD changes require ops review
-/.github/ JPlipio77
-/Dockerfile JPlipio77
+/.github/ @JPlipio77
+/Dockerfile @JPlipio77
