@@ -1,0 +1,15 @@
+on:
+    schedule:
+        - cron: '0 2 * * *'  # Runs every day at midnight
+    workflow_dispatch:
+
+jobs:
+    scan:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Scan filesystem with Trivy
+              uses: aquasecurity/trivy-action@master
+              with:
+                  scan-type: 'fs'
+                  severity: 'CRITICAL,HIGH'

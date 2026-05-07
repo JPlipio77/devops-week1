@@ -25,10 +25,13 @@ jobs:
         run: pip install -r requirements.txt pytest pytest-cov
 
       - name: Run tests with coverage
-        run: pytest tests/ -v --cov=. --cov-report=xml:coverage.xml --cov-report=term --cov-fail-under=75
+        run: pytest tests/ -v --cov=. --cov-report=xml:coverage.xml --cov-report=term --cov-fail-under=80
 
       - name: Post coverage comment
         uses: orgoro/coverage@v3.2
         with:
           coverageFile: coverage.xml
           token: ${{ secrets.GITHUB_TOKEN }}
+          thresholdAll: 0.80
+          thresholdNew: 0.90
+          thresholdModified: 0.85
