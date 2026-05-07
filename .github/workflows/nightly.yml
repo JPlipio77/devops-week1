@@ -1,4 +1,4 @@
-name: Nightly security scan
+name: Nightly Security Scan
 
 on:
   schedule:
