@@ -2,8 +2,8 @@ name: Nightly security scan
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 2 AM UTC daily
-  workflow_dispatch:       # also allow manual trigger
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
   scan:
