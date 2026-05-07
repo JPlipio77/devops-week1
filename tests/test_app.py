@@ -15,6 +15,6 @@ def test_hello(client):
     assert b"Hello from" in response.data
 
 
-def test_health_endpoint_exists(client):
+def test_health_endpoint_exists(clients):
     response = client.get('/health')
-    assert response.status_code in (200, 503)  # Depending on DB connection
+    assert response.status_code in (200, 503,)  # Depending on DB connection
