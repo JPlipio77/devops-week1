@@ -1,22 +1,7 @@
 name: Setup Project
-description: Local composite action
-inputs:
-  python-version:
-    description: Python version to use
-    required: true
-    default: "3.11"
-
+description: Minimal composite action
 runs:
   using: "composite"
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ inputs.python-version }}
-
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+    - run: echo "Local action is working!"
       shell: bash
