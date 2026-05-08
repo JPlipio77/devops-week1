@@ -1,21 +1,22 @@
-name: Setup Python Project
-description: 'Checkout code, setup Python, install dependencies'
+name: Setup Project
+description: Local composite action
 inputs:
   python-version:
-    description: 'Python version to set up'
-    required: false
-    default: '3.11'
+    description: Python version to use
+    required: true
+    default: "3.11"
+
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: ${{ inputs.python-version }}
-        cache: 'pip'
 
     - name: Install dependencies
-      shell: bash
       run: pip install -r requirements.txt
+      shell: bash
