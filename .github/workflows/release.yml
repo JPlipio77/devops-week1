@@ -2,12 +2,12 @@ name: Build & Push Image
 
 on:
   push:
-    branches: [ main]
+    branches: [ main ]
     tags: [ 'v*' ]
 
 concurrency:
   group: release-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-push:
@@ -49,4 +49,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha, mode=max
-          platform: linux/amd64
+          platforms: linux/amd64
