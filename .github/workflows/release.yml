@@ -66,3 +66,4 @@ jobs:
         run: |
           echo "Deploying to $TARGET"
           echo "Using key: $KEY"
+          # In reality, this would be kubectl / aws cli / ssh / etc.
